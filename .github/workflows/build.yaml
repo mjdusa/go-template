@@ -76,4 +76,4 @@ jobs:
             -X 'internal/version.BuildTime=${{ steps.prebuild.outputs.buildtime }}' \
             -X 'internal/version.Commit=${{ github.sha }}' \
             -X 'internal/version.GoVersion=${{ steps.prebuild.outputs.goversion }}'" \
-            -o dist/go-template-app cmd/go-template-app/main.go
+            -o dist/go-template cmd/go-template/main.go

@@ -1,9 +1,9 @@
-GIT_REPO:=github.com/go-template-org/go-template-app
+GIT_REPO:=github.com/mjdusa/go-template
 BRANCH:=$(shell git rev-parse --abbrev-ref HEAD)
 COMMIT:=$(shell git log --pretty=format:'%H' -n 1)
 BUILD_TS:=$(shell date -u "+%Y-%m-%dT%TZ")
 BUILD_DIR:=dist
-APP_NAME:=go-template-app
+APP_NAME:=go-template
 #APP_VERSION:=$(shell git describe --tags)
 APP_VERSION:=$(shell cat .version)
 GO_VERSION:=$(shell go version | sed -r 's/go version go(.*)\ .*/\1/')

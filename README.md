@@ -7,9 +7,9 @@
 
 ## Customizing Template after coping
 
-* TODO: Replace 'go-template-org' with your github org
-* TODO: Replace 'go-template-app' with your app name
-* TODO: Rename the cmd/go-template-app directory to your app name
+* TODO: Replace 'mjdusa' with your github organization or user
+* TODO: Replace 'go-template' with your application name
+* TODO: Rename the cmd/go-template directory to your app name
 
 
 ## Contributing
@@ -55,7 +55,7 @@ pre-commit run --all-files
 ```
 make release
 ...
-./dist/go-template-app
+./dist/go-template
 ```
 
 ## Maintaining, Housekeeping, Greenkeeping, etc

@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/go-template-org/go-template-app/internal/version"
+	"github.com/mjdusa/go-template/internal/version"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 )
@@ -20,13 +20,14 @@ func Test_VersionSuite(t *testing.T) {
 }
 
 func (s *VersionSuite) Test_GetVersion_unpopulated() {
-	expected := fmt.Sprintf("%s version: []\n- Branch:     []\n- Build Time: []\n- Commit:     []\n- Go Version: []\n", os.Args[0])
+	expected := fmt.Sprintf("%s version: []\n- Build Time:      []\n- Git Branch:      []\n- Git Commit:      []\n- Go Version:      []\n- OS/Architecture: []\n", os.Args[0])
 
 	version.AppVersion = ""
-	version.Branch = ""
 	version.BuildTime = ""
-	version.Commit = ""
+	version.GitBranch = ""
+	version.GitCommit = ""
 	version.GoVersion = ""
+	version.OsArch = ""
 
 	actual := version.GetVersion()
 
@@ -34,13 +35,15 @@ func (s *VersionSuite) Test_GetVersion_unpopulated() {
 }
 
 func (s *VersionSuite) Test_GetVersion_populated() {
-	expected := fmt.Sprintf("%s version: [v1.2.3]\n- Branch:     [main]\n- Build Time: [01/01/1970T00:00:00.0000 GMT]\n- Commit:     [1234567890abcdef]\n- Go Version: [1.20.5]\n", os.Args[0])
-
 	version.AppVersion = "v1.2.3"
-	version.Branch = "main"
 	version.BuildTime = "01/01/1970T00:00:00.0000 GMT"
-	version.Commit = "1234567890abcdef"
+	version.GitBranch = "main"
+	version.GitCommit = "1234567890abcdef"
 	version.GoVersion = "1.20.5"
+	version.OsArch = "Darwin/amd64"
+
+	expected := fmt.Sprintf("%s version: [%s]\n- Build Time:      [%s]\n- Git Branch:      [%s]\n- Git Commit:      [%s]\n- Go Version:      [%s]\n- OS/Architecture: [%s]\n",
+		os.Args[0], version.AppVersion, version.BuildTime, version.GitBranch, version.GitCommit, version.GoVersion, version.OsArch)
 
 	actual := version.GetVersion()
 
