@@ -11,7 +11,7 @@ GOBIN:=${GOPATH}/bin
 
 GOFLAGS = -a
 LDFLAGS = -s -w -X '$(GIT_REPO)/internal/version.AppVersion=$(APP_VERSION)' -X '$(GIT_REPO)/internal/version.Branch=$(BRANCH)' -X '$(GIT_REPO)/internal/version.BuildTime=$(BUILD_TS)' -X '$(GIT_REPO)/internal/version.Commit=$(COMMIT)' -X '$(GIT_REPO)/internal/version.GoVersion=$(GO_VERSION)'
-#GOCMD = GOPRIVATE='github.com/gdcorp-*' ; CGO_ENABLED='0' ; GO111MODULE='on' ; go
+#GOCMD = GOPRIVATE='' ; CGO_ENABLED='0' ; GO111MODULE='on' ; go
 GOCMD = GOPRIVATE='' ; GO111MODULE='on' ; go
 
 LINTER_REPORT = $(BUILD_DIR)/golangci-lint-$(BUILD_TS).out
