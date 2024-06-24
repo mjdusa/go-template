@@ -5,19 +5,13 @@ To help us get this pull request reviewed and merged quickly, please be sure to 
 * [ ] Documentation (if applicable)
 * [ ] Changelog entry
 * [ ] A full explanation/description of the work done in Description of Changes below
-* [ ] Update version (if applicable)
-
-
-## Description of Changes
-- 
-
 
 ## PR Type
 What kind of change does this PR introduce?
 
 * [ ] Bugfix
 * [ ] New Feature
-* [ ] Code Style Update (i.e linter fixes)
+* [ ] Code style update (formatting, linter fixes)
 * [ ] Refactoring (no functional changes)
 * [ ] Build, CI/CD
 * [ ] Documentation
@@ -30,3 +24,12 @@ Is this change backward compatible with the most recently released version? Does
 
 * [ ] Yes (backward compatible)
 * [ ] No (breaking changes)
+
+## Issue Linking
+<!--
+    KEYWORD #ISSUE-NUMBER
+    [closes|fixes|resolves] #
+-->
+
+# Description of Changes
+-
